@@ -6,14 +6,15 @@ rsgdx-mini
 * contact: miniapp@riken.jp
 
 
-About rsgdx-mini and RSGDX
+About RSGDX abd rsgdx-mini
 --------------------------------
 RSGDX is the application software that computes the time-space variation of
 the slip faulting caused by the tectonic stress and fault friction, aiming to
 simulate the cycle of earthquake occurrences.
 The analysis data size for RSGDX ranges from 10,000 cells to 1,000,000 cells
 requiring the input data ranging from Gigabytes to Terabytes.
-The rsgdx-mini is a packaged RSGDX prepared as a member of mini-appli suits.
+
+rsgdx-mini is a small packaged RSGDX prepared as a member of mini-appli suits.
 It contains the source files, small size test data with 1236 cells,
 and installation scripts.
 
@@ -216,13 +217,9 @@ value before submitting the job.
 	#PJM -j
 	#PJM -S
 	source /work/system/Env_base
-	hostname
 	NPROCS=8
 	export OMP_NUM_THREADS=8
-	time -p \
-	mpiexec -n ${NPROCS} ./rsgdx-${NPROCS}.ex -Wl,-T12
-	ls -go *
-
+	time -p mpiexec -n ${NPROCS} ./rsgdx-${NPROCS}.ex -Wl,-T12
 
 
 ###Verifying the computed results (This section must be updated)
